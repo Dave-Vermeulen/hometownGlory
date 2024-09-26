@@ -15,6 +15,12 @@ body {
     padding: 0;
 }
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
 h1, h2, h3 {
     font-family: 'Montserrat', sans-serif;
     color: var(--primary-color);
@@ -28,14 +34,23 @@ header {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+header h1 {
+    color: white;
+    margin: 0;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
 nav ul {
     list-style-type: none;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 10px;
+    margin: 0 15px;
 }
 
 nav ul li a {
@@ -43,26 +58,38 @@ nav ul li a {
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
+    font-size: 1.1rem;
 }
 
 nav ul li a:hover {
     color: var(--secondary-color);
 }
 
+section {
+    margin: 2rem 0;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
 .flex-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    gap: 2rem;
 }
 
 .attraction-card {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 1rem;
     padding: 1rem;
-    width: 300px;
+    width: calc(33.333% - 2rem);
+    min-width: 250px;
     transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .attraction-card:hover {
@@ -71,8 +98,10 @@ nav ul li a:hover {
 
 .attraction-card img {
     width: 100%;
-    height: auto;
+    height: 200px;
+    object-fit: cover;
     border-radius: 8px;
+    margin-bottom: 1rem;
 }
 
 .btn {
@@ -84,11 +113,56 @@ nav ul li a:hover {
     border-radius: 4px;
     transition: background-color 0.3s ease, color 0.3s ease;
     font-weight: bold;
+    text-align: center;
+    margin-top: auto;
 }
 
 .btn:hover {
     background-color: var(--primary-color);
     color: white;
+}
+
+#hero {
+    position: relative;
+    text-align: center;
+    color: white;
+    padding: 4rem 0;
+    background-color: var(--accent-color);
+    overflow: hidden;
+}
+
+#hero img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+#hero h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.widget-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+#github-widget, #strava-widget {
+    flex: 1;
+    text-align: center;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 footer {
@@ -99,42 +173,8 @@ footer {
     margin-top: 2rem;
 }
 
-#hero {
-    position: relative;
-    text-align: center;
-    color: white;
-    padding: 4rem 0;
-    background-color: var(--accent-color);
-}
-
-#hero img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-#hero h2 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 1rem;
-    border-radius: 8px;
-}
-
-.widget-container {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 2rem;
-}
-
-#github-widget, #strava-widget {
-    text-align: center;
-    padding: 1rem;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+#resume-btn {
+    margin-top: 1rem;
 }
 
 /* Responsive design */
@@ -145,7 +185,7 @@ footer {
     }
 
     .attraction-card {
-        width: 90%;
+        width: 100%;
     }
 
     .widget-container {
@@ -155,4 +195,37 @@ footer {
     #github-widget, #strava-widget {
         margin-bottom: 1rem;
     }
+
+    #hero h2 {
+        font-size: 1.5rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
+/* Additional styles for content images */
+.content-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+#about, #culture, #news {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#about img, #culture img, #news img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+#news article {
+    width: 100%;
+    max-width: 800px;
 }
