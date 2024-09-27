@@ -9,131 +9,59 @@
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--background-color);
     margin: 0;
     padding: 0;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-h1, h2, h3 {
-    font-family: 'Montserrat', sans-serif;
-    color: var(--primary-color);
+    background-color: #f4f4f4;
 }
 
 header {
-    background-color: var(--primary-color);
-    color: white;
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
     text-align: center;
-    padding: 1rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 header h1 {
-    color: white;
     margin: 0;
-    font-size: 2.5rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
 }
 
 nav ul li {
+    display: inline;
     margin: 0 15px;
 }
 
 nav ul li a {
-    color: white;
+    color: #fff;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease;
-    font-size: 1.1rem;
 }
 
-nav ul li a:hover {
-    color: var(--secondary-color);
+main {
+    padding: 20px;
 }
 
-section {
-    margin: 2rem 0;
-    padding: 2rem;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.flex-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 2rem;
-}
-
-.attraction-card {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
-    width: calc(33.333% - 2rem);
-    min-width: 250px;
-    transition: transform 0.3s ease;
-    display: flex;
-    flex-direction: column;
-}
-
-.attraction-card:hover {
-    transform: translateY(-5px);
-}
-
-.attraction-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
+h1, h2, h3 {
+    text-align: left; /* Consistent title alignment */
     margin-bottom: 1rem;
 }
 
-.btn {
-    display: inline-block;
-    background-color: var(--secondary-color);
-    color: var(--text-color);
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    font-weight: bold;
-    text-align: center;
-    margin-top: auto;
-}
-
-.btn:hover {
-    background-color: var(--primary-color);
-    color: white;
-}
-
+/* Hero Section */
 #hero {
     position: relative;
+    background-color: #333;
+    color: #fff;
     text-align: center;
-    color: white;
-    padding: 4rem 0;
-    background-color: var(--accent-color);
-    overflow: hidden;
 }
 
 #hero img {
     width: 100%;
-    height: 400px;
+    height: auto;
+    max-height: 450px;
     object-fit: cover;
 }
 
@@ -142,90 +70,143 @@ section {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 1rem 2rem;
-    border-radius: 8px;
-    font-size: 2rem;
-    margin: 0;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.8); /* Enhanced contrast */
+    padding: 10px 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Improved readability */
 }
 
-.widget-container {
+/* About Section */
+#about img {
+    width: 100%;
+    max-height: 250px; /* Enforced consistent size */
+    object-fit: cover;
+}
+
+/* Flex Container for Attractions and Widgets */
+.flex-container {
     display: flex;
-    justify-content: space-around;
-    gap: 2rem;
-    margin-top: 2rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
 }
 
-#github-widget, #strava-widget {
-    flex: 1;
-    text-align: center;
-    padding: 1rem;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-footer {
-    background-color: var(--primary-color);
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
-}
-
-#resume-btn {
-    margin-top: 1rem;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-    .flex-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .attraction-card {
-        width: 100%;
-    }
-
-    .widget-container {
-        flex-direction: column;
-    }
-
-    #github-widget, #strava-widget {
-        margin-bottom: 1rem;
-    }
-
-    #hero h2 {
-        font-size: 1.5rem;
-        padding: 0.5rem 1rem;
-    }
-}
-
-/* Additional styles for content images */
-.content-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin: 1rem 0;
-}
-
-#about, #culture, #news {
+.attraction-card, .widget-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-#about img, #culture img, #news img {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    object-fit: cover;
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Consistent shadow */
     border-radius: 8px;
-    margin: 1rem 0;
+    max-width: 300px;
 }
 
-#news article {
+.attraction-card img, .widget-container img {
     width: 100%;
-    max-width: 800px;
+    height: auto;
+    max-height: 250px; /* Image size consistency */
+    object-fit: cover;
+}
+
+.attraction-card:hover, .widget-container:hover {
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Button Styling */
+.btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Culture Section */
+#culture img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: cover;
+}
+
+/* News Section */
+#news article img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: cover;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Widget Section */
+.widget-container {
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+.widget-container div {
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    h1, h2, h3 {
+        font-size: 1.5rem; /* Reduced size for smaller screens */
+    }
+
+    .flex-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .attraction-card img {
+        max-height: 200px; /* Adjust image size for mobile */
+    }
+
+    .btn {
+        font-size: 0.9rem; /* Adjust button size for mobile */
+    }
+
+    p {
+        line-height: 1.6; /* Improved readability on mobile */
+        padding: 0 10px; /* Prevent text from touching the screen edges */
+    }
+}
+
+/* Text Readability Enhancement */
+p {
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
 }
