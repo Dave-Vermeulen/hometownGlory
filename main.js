@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const images = [
     'Images/image_car1.jpg',
     'Images/image_car2.jpg',
-    'Images/image_car3.jpg'
+    'https://github.com/Dave-Vermeulen/hometownGlory/blob/master/Images/image_car3.jpg'
   ];
 
   let currentIndex = 0;
