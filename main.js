@@ -9,9 +9,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 document.addEventListener('DOMContentLoaded', () => {
     const images = [
-        '/Images/carousel1.jpg',
-        '/Images/carousel2.jpg',
-        '/Images/carousel3.jpg'
+        'Images/image_car1.jpg',
+        'Images/image_car2.jpg',
+        'Images/image_car3.jpg'
     ];
 
     let currentIndex = 0;
