@@ -1,26 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
+    const images = [
+        'Images/image_car1.jpg',
+        'Images/image_car2.jpg',
+        'Images/image_car3.jpg'  
+    ];
 
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-document.addEventListener('DOMContentLoaded', () => {
-  const images = [
-    'Images/image_car1.jpg',
-    'Images/image_car2.jpg',
-    'https://github.com/Dave-Vermeulen/hometownGlory/blob/master/Images/image_car3.jpg'
-  ];
+    let currentIndex = 0;
+    const carouselImage = document.getElementById('carousel-image');
+    const previousButton = document.getElementById('previous-img');
+    const nextButton = document.getElementById('next-img');
 
-  let currentIndex = 0;
-  const carouselImage = document.getElementById('carousel-image');
-  carouselImage.src = images[currentIndex]; // Set the initial image here
-  const previousButton = document.getElementById('previous-img');
-  const nextButton = document.getElementById('next-img');
-    
     function updateImage() {
         carouselImage.src = images[currentIndex];
         carouselImage.alt = `Cape Town Scene ${currentIndex + 1}`;
@@ -36,30 +25,23 @@ document.addEventListener('DOMContentLoaded', () => {
         updateImage();
     }
 
-    nextButton.addEventListener('click', nextImage);
-    previousButton.addEventListener('click', previousImage);
+    nextButton.addEventListener('click', () => {
+        try {
+            nextImage();
+        } catch (error) {
+            console.error('Error: ', error);
+        }
+    });
 
-    // Initialize the carousel
+    previousButton.addEventListener('click', () => {
+        try {
+            previousImage();
+        } catch (error) {
+            console.error('Error: ', error);
+        }
+    });
+
+    
     updateImage();
 });
 
-//testing cause the carousel doesnt work:
-
- 
-  // error handling for button clicks
-  nextButton.addEventListener('click', () => {
-    try {
-      nextImage();
-    } catch (error) {
-      console.error('Error: ', error);
-    }
-  });
-
-  previousButton.addEventListener('click', () => {
-    try {
-      previousImage();
-    } catch (error) {
-      console.error('Error: ', error);
-    }
-  });
-});
