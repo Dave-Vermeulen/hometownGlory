@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', () => {
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -40,4 +41,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize the carousel
     updateImage();
+});
+
+//testing cause the carousel doesnt work:
+
+ 
+  // error handling for button clicks
+  nextButton.addEventListener('click', () => {
+    try {
+      nextImage();
+    } catch (error) {
+      console.error('Error: ', error);
+    }
+  });
+
+  previousButton.addEventListener('click', () => {
+    try {
+      previousImage();
+    } catch (error) {
+      console.error('Error: ', error);
+    }
+  });
 });
