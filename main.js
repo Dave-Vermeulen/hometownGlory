@@ -1,7 +1,7 @@
 let images = [
-  'Images/image_car1.jpg',
-  'Images/image_car2.jpg',
-  'Images/image_car3.jpg'
+  '/Images/image_car1.jpg',
+  '/Images/image_car2.jpg',
+  '/Images/image_car3.jpg'
 ];
 
 let currentIndex = 0;
